@@ -1,3 +1,3 @@
-[submodule "dnSpy"]
-	path = dnSpy
-	url = https://github.com/dnSpyEx/dnSpy
+[submodule "ILSpy"]
+	path = ILSpy
+	url = https://github.com/icsharpcode/ILSpy.git
