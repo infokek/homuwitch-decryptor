@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("homuwitch-decryptor")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyTitle("HomuWith Decryptor")]
+[assembly: AssemblyDescription("Decryptor for HomuWith Ransomware by infokek")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("homuwitch-decryptor")]
+[assembly: AssemblyCompany("@infokek")]
+[assembly: AssemblyProduct("HomuWith Decryptor")]
 [assembly: AssemblyCopyright("Copyright ©  2024")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
