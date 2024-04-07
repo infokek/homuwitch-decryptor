@@ -17,7 +17,7 @@ namespace homuwitch_decryptor
 {
     public class Decrypter
     {
-        public static string ExctractPasswordFromSample(PEFile peFile)
+        public static string ExtractPasswordFromSample(PEFile peFile)
         {
             Regex password_regex = new Regex(@"ldstr\s""(.*)""\s+.*string\sRnsmwr\.Program::password");
             try
@@ -84,6 +84,9 @@ namespace homuwitch_decryptor
     internal static class Program
     {
         public static readonly string encryptedextension = ".homuencrypted";
+        public static readonly string githuburl = "https://github.com/infokek";
+        public static readonly string linkedinurl = "https://www.linkedin.com/in/infokek/";
+        public static readonly string twitterurl = "https://twitter.com/infokek_";
 
         /// <summary>
         /// The main entry point for the application.

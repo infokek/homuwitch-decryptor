@@ -28,9 +28,11 @@ namespace homuwitch_decryptor
         {
             InitializeComponent();
         }
-        private void button1_Click(object sender, EventArgs e)
+
+        private void AddTextTo_richTextBox1(string text)
         {
-            
+            richTextBox1.AppendText(text);
+            richTextBox1.ScrollToCaret();
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -40,7 +42,55 @@ namespace homuwitch_decryptor
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
+            System.Diagnostics.Process.Start(Program.githuburl);
+        }
 
+        private void button1_Click(object sender, EventArgs e)
+        {
+            string[] search_directories = { Environment.GetFolderPath(Environment.SpecialFolder.UserProfile) };
+            string searchPattern = "*.exe";
+
+            foreach (string search_directory in search_directories)
+            {
+                if (Directory.Exists(search_directory))
+                {
+                    string[] directories = Directory.GetDirectories(search_directory);
+                    foreach (string directory in directories)
+                    {
+                        AddTextTo_richTextBox1("\n[*] Scanning directory: " + directory);
+                        try
+                        {
+                            string[] files = Directory.GetFiles(directory, searchPattern, SearchOption.AllDirectories);
+                            foreach (string file in files)
+                            {
+                                FileAttributes attributes = File.GetAttributes(file);
+                                if ((attributes & FileAttributes.Hidden) != 0 || (attributes & FileAttributes.ReadOnly) != 0)
+                                {
+                                    var peFileStream = new FileStream(file, FileMode.Open, FileAccess.Read);
+                                    var peFile = new PEFile(file, peFileStream);
+                                    string extracted_password = Decrypter.ExtractPasswordFromSample(peFile);
+                                    if (extracted_password != null)
+                                    {
+                                        AddTextTo_richTextBox1("\n[!!] Found decryption password: " + extracted_password + " in file " + file);
+                                        return;
+                                    }
+                                }
+                            }
+                        }
+                        catch (Exception ex)
+                        {
+                            if (ex is UnauthorizedAccessException)
+                            {
+                                AddTextTo_richTextBox1("\n[*] Cannot access: " + directory);
+                            }
+                            else
+                            {
+                                MessageBox.Show("Error looking for sample: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            }
+                        }
+                    }
+                }
+            }
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -57,13 +107,14 @@ namespace homuwitch_decryptor
                     var peFileStream = new FileStream(openFileDialog.FileName, FileMode.Open, FileAccess.Read);
                     var peFile = new PEFile(openFileDialog.FileName, peFileStream);
 
-                    string exctracted_password = Decrypter.ExctractPasswordFromSample(peFile);
-                    if (exctracted_password != null){
-                        richTextBox1.Text = richTextBox1.Text + "\n[*] Found decryption password: " + exctracted_password;
+                    string exctracted_password = Decrypter.ExtractPasswordFromSample(peFile);
+                    if (exctracted_password != null)
+                    {
+                        AddTextTo_richTextBox1("\n[!!] Found decryption password: " + exctracted_password);
                     }
                     else
                     {
-                        richTextBox1.Text = richTextBox1.Text + "\n[!] Ransomware decryption password not found in sample. Please try Auto.";
+                        AddTextTo_richTextBox1("\n[!!] Ransomware decryption password not found in sample. Please try Auto.");
                     }
                 }
             }
@@ -86,17 +137,17 @@ namespace homuwitch_decryptor
 
         private void pictureBox2_Click(object sender, EventArgs e)
         {
-            System.Diagnostics.Process.Start("https://github.com/infokek");
+            System.Diagnostics.Process.Start(Program.githuburl);
         }
 
         private void pictureBox3_Click(object sender, EventArgs e)
         {
-            System.Diagnostics.Process.Start("https://twitter.com/infokek_");
+            System.Diagnostics.Process.Start(Program.twitterurl);
         }
 
         private void pictureBox4_Click(object sender, EventArgs e)
         {
-            System.Diagnostics.Process.Start("https://www.linkedin.com/in/infokek/");
+            System.Diagnostics.Process.Start(Program.linkedinurl);
         }
     }
 }
