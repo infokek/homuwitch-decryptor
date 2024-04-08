@@ -1,37 +1,40 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\user\\Temp\\homuwitch-decryptor\\",
+  "WorkspaceRootPath": "C:\\Users\\User\\Temp\\homuwitch-decryptor\\",
   "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{A31ADCC1-7995-46C6-8C03-31C989F67CA0}|homuwitch-decryptor.csproj|C:\\Users\\User\\Temp\\homuwitch-decryptor\\main.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A31ADCC1-7995-46C6-8C03-31C989F67CA0}|homuwitch-decryptor.csproj|solutionrelative:main.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A31ADCC1-7995-46C6-8C03-31C989F67CA0}|homuwitch-decryptor.csproj|C:\\Users\\User\\Temp\\homuwitch-decryptor\\main.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{A31ADCC1-7995-46C6-8C03-31C989F67CA0}|homuwitch-decryptor.csproj|solutionrelative:main.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
     {
       "AbsoluteMoniker": "D:0:0:{A31ADCC1-7995-46C6-8C03-31C989F67CA0}|homuwitch-decryptor.csproj|c:\\users\\user\\temp\\homuwitch-decryptor\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A31ADCC1-7995-46C6-8C03-31C989F67CA0}|homuwitch-decryptor.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A31ADCC1-7995-46C6-8C03-31C989F67CA0}|homuwitch-decryptor.csproj|c:\\users\\user\\temp\\homuwitch-decryptor\\main.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A31ADCC1-7995-46C6-8C03-31C989F67CA0}|homuwitch-decryptor.csproj|solutionrelative:main.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A31ADCC1-7995-46C6-8C03-31C989F67CA0}|homuwitch-decryptor.csproj|C:\\Users\\user\\Temp\\homuwitch-decryptor\\main.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{A31ADCC1-7995-46C6-8C03-31C989F67CA0}|homuwitch-decryptor.csproj|solutionrelative:main.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A31ADCC1-7995-46C6-8C03-31C989F67CA0}|homuwitch-decryptor.csproj|C:\\Users\\user\\Temp\\homuwitch-decryptor\\packages.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
+      "AbsoluteMoniker": "D:0:0:{A31ADCC1-7995-46C6-8C03-31C989F67CA0}|homuwitch-decryptor.csproj|C:\\Users\\User\\Temp\\homuwitch-decryptor\\packages.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
       "RelativeMoniker": "D:0:0:{A31ADCC1-7995-46C6-8C03-31C989F67CA0}|homuwitch-decryptor.csproj|solutionrelative:packages.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A31ADCC1-7995-46C6-8C03-31C989F67CA0}|homuwitch-decryptor.csproj|C:\\Users\\user\\Temp\\homuwitch-decryptor\\main.resx||{FF4D6ACA-9352-4A5F-821E-F4D6EBDCAB11}",
-      "RelativeMoniker": "D:0:0:{A31ADCC1-7995-46C6-8C03-31C989F67CA0}|homuwitch-decryptor.csproj|solutionrelative:main.resx||{FF4D6ACA-9352-4A5F-821E-F4D6EBDCAB11}"
+      "AbsoluteMoniker": "D:0:0:{A31ADCC1-7995-46C6-8C03-31C989F67CA0}|homuwitch-decryptor.csproj|C:\\Users\\User\\Temp\\homuwitch-decryptor\\main.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A31ADCC1-7995-46C6-8C03-31C989F67CA0}|homuwitch-decryptor.csproj|solutionrelative:main.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A31ADCC1-7995-46C6-8C03-31C989F67CA0}|homuwitch-decryptor.csproj|C:\\Users\\user\\Temp\\homuwitch-decryptor\\main.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A31ADCC1-7995-46C6-8C03-31C989F67CA0}|homuwitch-decryptor.csproj|solutionrelative:main.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A31ADCC1-7995-46C6-8C03-31C989F67CA0}|homuwitch-decryptor.csproj|C:\\Users\\User\\Temp\\homuwitch-decryptor\\main.resx||{FF4D6ACA-9352-4A5F-821E-F4D6EBDCAB11}",
+      "RelativeMoniker": "D:0:0:{A31ADCC1-7995-46C6-8C03-31C989F67CA0}|homuwitch-decryptor.csproj|solutionrelative:main.resx||{FF4D6ACA-9352-4A5F-821E-F4D6EBDCAB11}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{00000000-0000-0000-0000-000000000000}|\u003CSolution\u003E|homuwitch-decryptor||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A31ADCC1-7995-46C6-8C03-31C989F67CA0}|homuwitch-decryptor.csproj|C:\\Users\\user\\Temp\\homuwitch-decryptor\\app.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
+      "AbsoluteMoniker": "D:0:0:{A31ADCC1-7995-46C6-8C03-31C989F67CA0}|homuwitch-decryptor.csproj|C:\\Users\\User\\Temp\\homuwitch-decryptor\\app.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
       "RelativeMoniker": "D:0:0:{A31ADCC1-7995-46C6-8C03-31C989F67CA0}|homuwitch-decryptor.csproj|solutionrelative:app.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A31ADCC1-7995-46C6-8C03-31C989F67CA0}|homuwitch-decryptor.csproj|c:\\users\\user\\temp\\homuwitch-decryptor\\||{B270807C-D8C6-49EB-8EBE-8E8D566637A1}|5e9a8ac2-4f34-4521-858f-4c248ba31532"
     }
   ],
   "DocumentGroupContainers": [
@@ -41,15 +44,15 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 7,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 5,
               "Title": "Main.resx",
-              "DocumentMoniker": "C:\\Users\\user\\Temp\\homuwitch-decryptor\\Main.resx",
+              "DocumentMoniker": "C:\\Users\\User\\Temp\\homuwitch-decryptor\\Main.resx",
               "RelativeDocumentMoniker": "Main.resx",
-              "ToolTip": "C:\\Users\\user\\Temp\\homuwitch-decryptor\\Main.resx",
+              "ToolTip": "C:\\Users\\User\\Temp\\homuwitch-decryptor\\Main.resx",
               "RelativeToolTip": "Main.resx",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001005|",
               "WhenOpened": "2024-04-06T16:47:09.337Z",
@@ -58,13 +61,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "Main.cs",
-              "DocumentMoniker": "C:\\Users\\user\\Temp\\homuwitch-decryptor\\Main.cs",
+              "DocumentMoniker": "C:\\Users\\User\\Temp\\homuwitch-decryptor\\Main.cs",
               "RelativeDocumentMoniker": "Main.cs",
-              "ToolTip": "C:\\Users\\user\\Temp\\homuwitch-decryptor\\Main.cs",
+              "ToolTip": "C:\\Users\\User\\Temp\\homuwitch-decryptor\\Main.cs",
               "RelativeToolTip": "Main.cs",
-              "ViewState": "AQIAAF4AAAAAAAAAAAAcwHEAAAAVAAAA",
+              "ViewState": "AQIAAFEAAAAAAAAAAAAowAwAAAAfAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-04-07T11:07:46.71Z",
               "EditorCaption": ""
@@ -73,22 +76,23 @@
               "$type": "Document",
               "DocumentIndex": 6,
               "Title": "homuwitch-decryptor",
-              "DocumentMoniker": "C:\\Users\\user\\Temp\\homuwitch-decryptor\\homuwitch-decryptor.csproj",
+              "DocumentMoniker": "C:\\Users\\User\\Temp\\homuwitch-decryptor\\homuwitch-decryptor.csproj",
               "RelativeDocumentMoniker": "homuwitch-decryptor.csproj",
-              "ToolTip": "C:\\Users\\user\\Temp\\homuwitch-decryptor\\homuwitch-decryptor.csproj",
+              "ToolTip": "C:\\Users\\User\\Temp\\homuwitch-decryptor\\homuwitch-decryptor.csproj",
               "RelativeToolTip": "homuwitch-decryptor.csproj",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2024-04-06T17:49:12.456Z"
+              "WhenOpened": "2024-04-06T17:49:12.456Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 4,
               "Title": "Main.Designer.cs",
-              "DocumentMoniker": "C:\\Users\\user\\Temp\\homuwitch-decryptor\\Main.Designer.cs",
+              "DocumentMoniker": "C:\\Users\\User\\Temp\\homuwitch-decryptor\\Main.Designer.cs",
               "RelativeDocumentMoniker": "Main.Designer.cs",
-              "ToolTip": "C:\\Users\\user\\Temp\\homuwitch-decryptor\\Main.Designer.cs",
+              "ToolTip": "C:\\Users\\User\\Temp\\homuwitch-decryptor\\Main.Designer.cs",
               "RelativeToolTip": "Main.Designer.cs",
-              "ViewState": "AQIAAE4AAAAAAAAAAAAiwB4AAAA3AAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABwAAAAoAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-04-06T17:45:28.519Z",
               "EditorCaption": ""
@@ -97,9 +101,9 @@
               "$type": "Document",
               "DocumentIndex": 7,
               "Title": "App.config",
-              "DocumentMoniker": "C:\\Users\\user\\Temp\\homuwitch-decryptor\\App.config",
+              "DocumentMoniker": "C:\\Users\\User\\Temp\\homuwitch-decryptor\\App.config",
               "RelativeDocumentMoniker": "App.config",
-              "ToolTip": "C:\\Users\\user\\Temp\\homuwitch-decryptor\\App.config",
+              "ToolTip": "C:\\Users\\User\\Temp\\homuwitch-decryptor\\App.config",
               "RelativeToolTip": "App.config",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000601|",
@@ -108,11 +112,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 1,
               "Title": "Main.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\user\\Temp\\homuwitch-decryptor\\Main.cs",
+              "DocumentMoniker": "C:\\Users\\User\\Temp\\homuwitch-decryptor\\Main.cs",
               "RelativeDocumentMoniker": "Main.cs",
-              "ToolTip": "C:\\Users\\user\\Temp\\homuwitch-decryptor\\Main.cs [Design]",
+              "ToolTip": "C:\\Users\\User\\Temp\\homuwitch-decryptor\\Main.cs [Design]",
               "RelativeToolTip": "Main.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-04-06T17:25:47.969Z",
@@ -122,9 +126,9 @@
               "$type": "Document",
               "DocumentIndex": 3,
               "Title": "packages.config",
-              "DocumentMoniker": "C:\\Users\\user\\Temp\\homuwitch-decryptor\\packages.config",
+              "DocumentMoniker": "C:\\Users\\User\\Temp\\homuwitch-decryptor\\packages.config",
               "RelativeDocumentMoniker": "packages.config",
-              "ToolTip": "C:\\Users\\user\\Temp\\homuwitch-decryptor\\packages.config",
+              "ToolTip": "C:\\Users\\User\\Temp\\homuwitch-decryptor\\packages.config",
               "RelativeToolTip": "packages.config",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAALAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000601|",
@@ -133,13 +137,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 2,
               "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\user\\Temp\\homuwitch-decryptor\\Program.cs",
+              "DocumentMoniker": "C:\\Users\\User\\Temp\\homuwitch-decryptor\\Program.cs",
               "RelativeDocumentMoniker": "Program.cs",
-              "ToolTip": "C:\\Users\\user\\Temp\\homuwitch-decryptor\\Program.cs",
+              "ToolTip": "C:\\Users\\User\\Temp\\homuwitch-decryptor\\Program.cs",
               "RelativeToolTip": "Program.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABgAAAA3AAAA",
+              "ViewState": "AQIAADEAAAAAAAAAAAAQwAcAAAASAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-04-05T22:21:36.868Z",
               "EditorCaption": ""

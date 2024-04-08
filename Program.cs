@@ -1,17 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO.Compression;
-using System.IO;
-using System.Linq;
-using System.Security.Cryptography;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+﻿using ICSharpCode.Decompiler;
 using ICSharpCode.Decompiler.Disassembler;
 using ICSharpCode.Decompiler.Metadata;
-using ICSharpCode.Decompiler;
-using System.Threading;
+using System;
+using System.IO;
+using System.IO.Compression;
+using System.Security.Cryptography;
+using System.Text;
 using System.Text.RegularExpressions;
+using System.Threading;
+using System.Windows.Forms;
 
 namespace homuwitch_decryptor
 {
@@ -87,6 +84,8 @@ namespace homuwitch_decryptor
         public static readonly string githuburl = "https://github.com/infokek";
         public static readonly string linkedinurl = "https://www.linkedin.com/in/infokek/";
         public static readonly string twitterurl = "https://twitter.com/infokek_";
+        public static readonly int max_file_size = 1700000;
+        public static readonly int min_file_size = 1400000;
 
         /// <summary>
         /// The main entry point for the application.

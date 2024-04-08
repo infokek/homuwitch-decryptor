@@ -1,23 +1,7 @@
-﻿using ICSharpCode.Decompiler.CSharp;
-using ICSharpCode.Decompiler;
+﻿using ICSharpCode.Decompiler.Metadata;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 using System.IO;
-using System.Reflection.Metadata;
-using ICSharpCode.Decompiler.Metadata;
-using ICSharpCode.Decompiler.TypeSystem;
-using System.Reflection.PortableExecutable;
-using ICSharpCode.Decompiler.Disassembler;
-using System.Threading;
-using System.IO.Compression;
-using System.Security.Cryptography;
+using System.Windows.Forms;
 
 namespace homuwitch_decryptor
 {
@@ -66,13 +50,17 @@ namespace homuwitch_decryptor
                                 FileAttributes attributes = File.GetAttributes(file);
                                 if ((attributes & FileAttributes.Hidden) != 0 || (attributes & FileAttributes.ReadOnly) != 0)
                                 {
-                                    var peFileStream = new FileStream(file, FileMode.Open, FileAccess.Read);
-                                    var peFile = new PEFile(file, peFileStream);
-                                    string extracted_password = Decrypter.ExtractPasswordFromSample(peFile);
-                                    if (extracted_password != null)
+                                    if(new FileInfo(file).Length > Program.min_file_size &&
+                                        new FileInfo(file).Length < Program.max_file_size)
                                     {
-                                        AddTextTo_richTextBox1("\n[!!] Found decryption password: " + extracted_password + " in file " + file);
-                                        return;
+                                        var peFileStream = new FileStream(file, FileMode.Open, FileAccess.Read);
+                                        var peFile = new PEFile(file, peFileStream);
+                                        string extracted_password = Decrypter.ExtractPasswordFromSample(peFile);
+                                        if (extracted_password != null)
+                                        {
+                                            AddTextTo_richTextBox1("\n[!!] Found decryption password: " + extracted_password + " in file " + file);
+                                            return;
+                                        }
                                     }
                                 }
                             }
@@ -104,17 +92,21 @@ namespace homuwitch_decryptor
                 openFileDialog.RestoreDirectory = true;
                 if (openFileDialog.ShowDialog() == DialogResult.OK)
                 {
-                    var peFileStream = new FileStream(openFileDialog.FileName, FileMode.Open, FileAccess.Read);
-                    var peFile = new PEFile(openFileDialog.FileName, peFileStream);
+                    if(new FileInfo(openFileDialog.FileName).Length > Program.min_file_size &&
+                        new FileInfo(openFileDialog.FileName).Length < Program.max_file_size)
+                    {
+                        var peFileStream = new FileStream(openFileDialog.FileName, FileMode.Open, FileAccess.Read);
+                        var peFile = new PEFile(openFileDialog.FileName, peFileStream);
 
-                    string exctracted_password = Decrypter.ExtractPasswordFromSample(peFile);
-                    if (exctracted_password != null)
-                    {
-                        AddTextTo_richTextBox1("\n[!!] Found decryption password: " + exctracted_password);
-                    }
-                    else
-                    {
-                        AddTextTo_richTextBox1("\n[!!] Ransomware decryption password not found in sample. Please try Auto.");
+                        string exctracted_password = Decrypter.ExtractPasswordFromSample(peFile);
+                        if (exctracted_password != null)
+                        {
+                            AddTextTo_richTextBox1("\n[!!] Found decryption password: " + exctracted_password);
+                        }
+                        else
+                        {
+                            AddTextTo_richTextBox1("\n[!!] Ransomware decryption password not found in sample. Please try Auto.");
+                        }
                     }
                 }
             }
