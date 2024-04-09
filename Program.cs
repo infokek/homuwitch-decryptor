@@ -80,7 +80,9 @@ namespace homuwitch_decryptor
     }
     internal static class Program
     {
-        public static readonly string encryptedextension = ".homuencrypted";
+        public static string decryption_password = null;
+        public static readonly string decryption_directory = "Homuwitch_Decrypted";
+        public static readonly string encrypted_extension = ".homuencrypted";
         public static readonly string githuburl = "https://github.com/infokek";
         public static readonly string linkedinurl = "https://www.linkedin.com/in/infokek/";
         public static readonly string twitterurl = "https://twitter.com/infokek_";

@@ -59,6 +59,7 @@ namespace homuwitch_decryptor
                                         if (extracted_password != null)
                                         {
                                             AddTextTo_richTextBox1("\n[!!] Found decryption password: " + extracted_password + " in file " + file);
+                                            Program.decryption_password = extracted_password;
                                             return;
                                         }
                                     }
@@ -98,10 +99,11 @@ namespace homuwitch_decryptor
                         var peFileStream = new FileStream(openFileDialog.FileName, FileMode.Open, FileAccess.Read);
                         var peFile = new PEFile(openFileDialog.FileName, peFileStream);
 
-                        string exctracted_password = Decrypter.ExtractPasswordFromSample(peFile);
-                        if (exctracted_password != null)
+                        string extracted_password = Decrypter.ExtractPasswordFromSample(peFile);
+                        if (extracted_password != null)
                         {
-                            AddTextTo_richTextBox1("\n[!!] Found decryption password: " + exctracted_password);
+                            AddTextTo_richTextBox1("\n[!!] Found decryption password: " + extracted_password);
+                            Program.decryption_password = extracted_password;
                         }
                         else
                         {
@@ -114,7 +116,62 @@ namespace homuwitch_decryptor
 
         private void button3_Click(object sender, EventArgs e)
         {
-
+            string decryption_directory_path = Environment.GetFolderPath(Environment.SpecialFolder.Desktop)
+                + "/" + Program.decryption_directory + "/";
+            if (Program.decryption_password != null)
+            {
+                if (!Directory.Exists(decryption_directory_path))
+                {
+                    AddTextTo_richTextBox1("\n[*] Creating directory " + decryption_directory_path);
+                    Directory.CreateDirectory(decryption_directory_path);
+                    string[] search_directories = { Environment.GetFolderPath(Environment.SpecialFolder.UserProfile) };
+                    foreach (string search_directory in search_directories)
+                    {
+                        if (Directory.Exists(search_directory))
+                        {
+                            string[] directories = Directory.GetDirectories(search_directory);
+                            foreach (string directory in directories)
+                            {
+                                AddTextTo_richTextBox1("\n[*] Scanning directory for encrypted files: " + directory);
+                                try
+                                {
+                                    string[] files = Directory.GetFiles(directory, "*" + Program.encrypted_extension, SearchOption.AllDirectories);
+                                    foreach (string file in files)
+                                    {                                    
+                                        AddTextTo_richTextBox1("\n[*] Decrypting file: " + file);
+                                        string real_filename = Path.GetFileName(file).Replace(Program.encrypted_extension, "");
+                                        Decrypter.DecryptFile(file, decryption_directory_path + real_filename, Program.decryption_password);
+                                    }
+                                }
+                                catch (Exception ex)
+                                {
+                                    if (ex is UnauthorizedAccessException)
+                                    {
+                                        AddTextTo_richTextBox1("\n[*] Cannot access: " + directory);
+                                    }
+                                    else
+                                    {
+                                        MessageBox.Show("Error looking for encrypted file: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                else
+                {
+                    AddTextTo_richTextBox1("\n[!] Directory " + Program.decryption_directory + " exists");
+                    MessageBox.Show("Directory " 
+                        + Program.decryption_directory
+                        + " exists.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            else
+            {
+                AddTextTo_richTextBox1("\n[!] Password hasn't extracted yet. Please try Auto or Pick sample manually.");
+                MessageBox.Show("Password hasn't extracted yet." +
+                    " Please try Auto or Pick sample manually.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void label1_Click(object sender, EventArgs e)
