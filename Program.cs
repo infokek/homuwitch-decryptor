@@ -81,6 +81,7 @@ namespace homuwitch_decryptor
     internal static class Program
     {
         public static string decryption_password = null;
+        public static string decryption_log = Path.GetTempPath() + "homuwitch_decryptor.log";
         public static readonly string encrypted_extension = ".homuencrypted";
         public static readonly string githuburl = "https://github.com/infokek";
         public static readonly string linkedinurl = "https://www.linkedin.com/in/infokek/";

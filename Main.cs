@@ -1,5 +1,6 @@
 ﻿using ICSharpCode.Decompiler.Metadata;
 using System;
+using System.ComponentModel;
 using System.IO;
 using System.Windows.Forms;
 
@@ -15,7 +16,11 @@ namespace homuwitch_decryptor
 
         private void AddTextTo_richTextBox1(string text)
         {
-            richTextBox1.AppendText(text);
+            using (StreamWriter w = File.AppendText(Program.decryption_log))
+            {
+                w.WriteLine(DateTime.Now.ToString() + text);
+            }
+            richTextBox1.AppendText("\n" + text);
             richTextBox1.ScrollToCaret();
         }
 
@@ -41,7 +46,7 @@ namespace homuwitch_decryptor
                     string[] directories = Directory.GetDirectories(search_directory);
                     foreach (string directory in directories)
                     {
-                        AddTextTo_richTextBox1("\n[*] Scanning directory: " + directory);
+                        AddTextTo_richTextBox1("[*] Scanning directory: " + directory);
                         try
                         {
                             string[] files = Directory.GetFiles(directory, searchPattern, SearchOption.AllDirectories);
@@ -58,7 +63,7 @@ namespace homuwitch_decryptor
                                         string extracted_password = Decrypter.ExtractPasswordFromSample(peFile);
                                         if (extracted_password != null)
                                         {
-                                            AddTextTo_richTextBox1("\n[!!] Found decryption password: " + extracted_password + " in file " + file);
+                                            AddTextTo_richTextBox1("[!] Found decryption password: " + extracted_password + " in file " + file);
                                             Program.decryption_password = extracted_password;
                                             return;
                                         }
@@ -70,7 +75,7 @@ namespace homuwitch_decryptor
                         {
                             if (ex is UnauthorizedAccessException)
                             {
-                                AddTextTo_richTextBox1("\n[*] Cannot access: " + directory);
+                                AddTextTo_richTextBox1("[*] Cannot access: " + directory);
                             }
                             else
                             {
@@ -102,61 +107,102 @@ namespace homuwitch_decryptor
                         string extracted_password = Decrypter.ExtractPasswordFromSample(peFile);
                         if (extracted_password != null)
                         {
-                            AddTextTo_richTextBox1("\n[!!] Found decryption password: " + extracted_password);
+                            AddTextTo_richTextBox1("[!] Found decryption password: " + extracted_password);
                             Program.decryption_password = extracted_password;
                         }
                         else
                         {
-                            AddTextTo_richTextBox1("\n[!!] Ransomware decryption password not found in sample. Please try Auto.");
+                            AddTextTo_richTextBox1("[!!] Ransomware decryption password not found in sample. Please try Auto.");
                         }
                     }
                 }
+            }
+        }
+        private void backgroundWorker1_DoWork(object sender, DoWorkEventArgs e)
+        {
+            BackgroundWorker bw = sender as BackgroundWorker;
+            // int arg = (int)e.Argument;
+            string[] search_directories = { Environment.GetFolderPath(Environment.SpecialFolder.UserProfile) };
+            foreach (string search_directory in search_directories)
+            {
+                if (Directory.Exists(search_directory))
+                {
+                    string[] directories = Directory.GetDirectories(search_directory);
+                    foreach (string directory in directories)
+                    {
+                        AddTextTo_richTextBox1("[*] Scanning directory for encrypted files: " + directory);
+                        try
+                        {
+                            string[] files = Directory.GetFiles(directory, "*" + Program.encrypted_extension, SearchOption.AllDirectories);
+                            foreach (string file in files)
+                            {
+                                if (bw.CancellationPending)
+                                {
+                                    e.Cancel = true;
+                                    AddTextTo_richTextBox1("[*] Log file is " + Program.decryption_log);
+                                    break;
+                                }
+                                AddTextTo_richTextBox1("[*] Decrypting file: " + file);
+                                string real_filename = Path.GetFileName(file).Replace(Program.encrypted_extension, "");
+                                string decrypted_file_path = Path.GetDirectoryName(file) + "\\" + real_filename;
+                                Decrypter.DecryptFile(file, decrypted_file_path, Program.decryption_password);
+                                AddTextTo_richTextBox1("[*] Successfully decrypted: " + decrypted_file_path);
+                            }
+                            if (e.Cancel)
+                            {
+                                AddTextTo_richTextBox1("[!] Decryption process was canceled");
+                            }
+                            else
+                            {
+                                AddTextTo_richTextBox1("[*] Successfully decrypted all files");
+                            }
+                            AddTextTo_richTextBox1("[*] Log file is " + Program.decryption_log);
+                        }
+                        catch (Exception ex)
+                        {
+                            if (ex is UnauthorizedAccessException)
+                            {
+                                AddTextTo_richTextBox1("[*] Cannot access: " + directory);
+                            }
+                            else
+                            {
+                                MessageBox.Show("Error looking for encrypted file: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        private void backgroundWorker1_RunWorkerCompleted(
+            object sender,
+            RunWorkerCompletedEventArgs e)
+        {
+            if (e.Cancelled)
+            {
+                MessageBox.Show("Decryption process was canceled", "Stopped", MessageBoxButtons.OK);
+            }
+            else if (e.Error != null)
+            {
+                string msg = String.Format("An error occurred while decrypting: {0}", e.Error.Message);
+                MessageBox.Show(msg);
             }
         }
         private void button3_Click(object sender, EventArgs e)
         {
             if (Program.decryption_password != null)
             {
-                string[] search_directories = { Environment.GetFolderPath(Environment.SpecialFolder.UserProfile) };
-                foreach (string search_directory in search_directories)
+                if (!backgroundWorker1.IsBusy)
                 {
-                    if (Directory.Exists(search_directory))
-                    {
-                        string[] directories = Directory.GetDirectories(search_directory);
-                        foreach (string directory in directories)
-                        {
-                            AddTextTo_richTextBox1("\n[*] Scanning directory for encrypted files: " + directory);
-                            try
-                            {
-                                string[] files = Directory.GetFiles(directory, "*" + Program.encrypted_extension, SearchOption.AllDirectories);
-                                foreach (string file in files)
-                                {
-                                    AddTextTo_richTextBox1("\n[*] Decrypting file: " + file);
-                                    string real_filename = Path.GetFileName(file).Replace(Program.encrypted_extension, "");
-                                    string decrypted_file_path = Path.GetDirectoryName(file) + "\\" + real_filename;
-                                    Decrypter.DecryptFile(file, decrypted_file_path, Program.decryption_password);
-                                    AddTextTo_richTextBox1("\n[*] Successfully decrypted: " + decrypted_file_path);
-                                }
-                                AddTextTo_richTextBox1("\n[*] Successfully decrypted all files");
-                            }
-                            catch (Exception ex)
-                            {
-                                if (ex is UnauthorizedAccessException)
-                                {
-                                    AddTextTo_richTextBox1("\n[*] Cannot access: " + directory);
-                                }
-                                else
-                                {
-                                    MessageBox.Show("Error looking for encrypted file: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                                }
-                            }
-                        }
-                    }
+                    backgroundWorker1.RunWorkerAsync();
+                }
+                else
+                {
+                    backgroundWorker1.CancelAsync();
                 }
             }
             else
             {
-                AddTextTo_richTextBox1("\n[!] Password hasn't extracted yet. Please try Auto or Pick sample manually.");
+                AddTextTo_richTextBox1("[!] Password hasn't extracted yet. Please try Auto or Pick sample manually.");
                 MessageBox.Show("Password hasn't extracted yet." +
                     " Please try Auto or Pick sample manually.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }

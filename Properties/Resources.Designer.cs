@@ -93,9 +93,9 @@ namespace homuwitch_decryptor.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap picture {
+        internal static System.Drawing.Bitmap main_image {
             get {
-                object obj = ResourceManager.GetObject("picture", resourceCulture);
+                object obj = ResourceManager.GetObject("main_image", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
