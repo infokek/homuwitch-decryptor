@@ -61,12 +61,15 @@ namespace homuwitch_decryptor
                                         var peFileStream = new FileStream(file, FileMode.Open, FileAccess.Read);
                                         var peFile = new PEFile(file, peFileStream);
                                         string extracted_password = Decrypter.ExtractPasswordFromSample(peFile);
+                                        peFileStream.Close();
                                         if (extracted_password != null)
                                         {
                                             AddTextTo_richTextBox1("[!] Found decryption password: " + extracted_password + " in file " + file);
                                             Program.decryption_password = extracted_password;
+                                            Program.ransomware_file = file;
                                             return;
                                         }
+
                                     }
                                 }
                             }
@@ -121,7 +124,6 @@ namespace homuwitch_decryptor
         private void backgroundWorker1_DoWork(object sender, DoWorkEventArgs e)
         {
             BackgroundWorker bw = sender as BackgroundWorker;
-            // int arg = (int)e.Argument;
             string[] search_directories = { Environment.GetFolderPath(Environment.SpecialFolder.UserProfile) };
             foreach (string search_directory in search_directories)
             {
@@ -155,6 +157,44 @@ namespace homuwitch_decryptor
                             else
                             {
                                 AddTextTo_richTextBox1("[*] Successfully decrypted all files");
+                            }
+                            if (Program.ransomware_file != null)
+                            {
+                                /// defuse (kill) ransomware process
+                                if (Decrypter.DefuseRansomware(Program.ransomware_file) == true)
+                                {
+                                    AddTextTo_richTextBox1("[*] Successfully killed ransomware process");
+                                }
+                                else
+                                {
+                                    AddTextTo_richTextBox1("[*] Probably ransowmare not running, so process no need to be killed");
+                                }
+                                /// change file attributes
+                                File.SetAttributes(Program.ransomware_file, FileAttributes.Normal);
+                                File.SetAttributes(Program.ransomware_file, FileAttributes.ReadOnly);
+                                string new_filename = Program.ransomware_file + ".ransomware_sample";
+                                File.Move(Program.ransomware_file, new_filename);
+                                AddTextTo_richTextBox1("[*] Filename for ransomware changed " + new_filename);
+                                /// change wallpaper to default
+                                Decrypter.SystemParametersInfo(Decrypter.SPI_SETDESKWALLPAPER, 0,
+                                    "C:\\Windows\\Web\\Wallpaper\\Windows\\img0.jpg", Decrypter.SPIF_UPDATEINIFILE | Decrypter.SPIF_SENDCHANGE);
+                                /// remove ransomware persistent
+                                if (File.Exists(Program.path_to_ransomware_startup) == true)
+                                {
+                                    try
+                                    {
+                                        File.Delete(Program.path_to_ransomware_startup);
+                                    }
+                                    catch (Exception ex)
+                                    {
+                                        MessageBox.Show("Error removing ransomware persistence: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                    }
+                                }
+                                else
+                                {
+                                    AddTextTo_richTextBox1("[*] Ransomware seems not to be persisted at path" + Program.path_to_ransomware_startup);
+                                }
+                                Program.ransomware_file = null; 
                             }
                             AddTextTo_richTextBox1("[*] Log file is " + Program.decryption_log);
                         }

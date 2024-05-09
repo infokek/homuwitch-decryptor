@@ -2,8 +2,10 @@
 using ICSharpCode.Decompiler.Disassembler;
 using ICSharpCode.Decompiler.Metadata;
 using System;
+using System.Diagnostics;
 using System.IO;
 using System.IO.Compression;
+using System.Runtime.InteropServices;
 using System.Security.Cryptography;
 using System.Text;
 using System.Text.RegularExpressions;
@@ -14,6 +16,41 @@ namespace homuwitch_decryptor
 {
     public class Decrypter
     {
+        public const int SPI_SETDESKWALLPAPER = 20;
+        public const int SPIF_UPDATEINIFILE = 1;
+        public const int SPIF_SENDCHANGE = 2;
+
+        /// <summary>
+        /// Parameters info changer for wallpaper changer.
+        /// </summary>
+        [DllImport("user32.dll", CharSet = CharSet.Auto, SetLastError = true)]
+        public static extern int SystemParametersInfo(int uAction, int uParam, string lpvParam, int fuWinIni);
+
+        /// <summary>
+        /// Kill active ransomware process.
+        /// </summary>
+        public static bool DefuseRansomware(string file_path)
+        {
+            try
+            {
+                Process.GetProcessesByName(Path.GetFileNameWithoutExtension(Path.GetFileName(file_path)))[0].Kill();
+                return true;
+            }
+
+            catch (Exception ex)
+            {
+                if (ex is IndexOutOfRangeException)
+                {
+                    return false;
+                }
+                MessageBox.Show("Error killing process: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+        }
+
+        /// <summary>
+        /// Extract password from specific PEFile object using Regex and ReflectionDisassembler.
+        /// </summary>
         public static string ExtractPasswordFromSample(PEFile peFile)
         {
             Regex password_regex = new Regex(@"ldstr\s""(.*)""\s+.*string\sRnsmwr\.Program::password");
@@ -49,6 +86,10 @@ namespace homuwitch_decryptor
                 return null;
             }
         }
+
+        /// <summary>
+        /// Decrypt file using AES. (function from reversed ransomware binary)
+        /// </summary>
         public static void DecryptFile(string inputFilePath, string outputFilePath, string password)
         {
             using (FileStream fileStream = new FileStream(inputFilePath, FileMode.Open))
@@ -78,11 +119,22 @@ namespace homuwitch_decryptor
             }
         }
     }
-    internal static class Program
+
+
+internal static class Program
     {
+        /// <summary>
+        ///  Decryption password that contains in ransomware sample
+        /// </summary>
         public static string decryption_password = null;
+        public static string ransomware_file = null;
         public static string decryption_log = Path.GetTempPath() + "homuwitch_decryptor.log";
+
+        /// <summary>
+        ///  Some hardcoded settings that can be changed
+        /// </summary>
         public static readonly string encrypted_extension = ".homuencrypted";
+        public static readonly string path_to_ransomware_startup = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Startup), "HomuC.lnk");
         public static readonly string githuburl = "https://github.com/infokek";
         public static readonly string linkedinurl = "https://www.linkedin.com/in/infokek/";
         public static readonly string twitterurl = "https://twitter.com/infokek_";

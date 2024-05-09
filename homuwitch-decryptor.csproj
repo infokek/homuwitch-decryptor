@@ -50,6 +50,7 @@
   <PropertyGroup>
     <ApplicationIcon>decryptor.ico</ApplicationIcon>
   </PropertyGroup>
+  <PropertyGroup />
   <ItemGroup>
     <Reference Include="ICSharpCode.Decompiler, Version=8.2.0.7535, Culture=neutral, PublicKeyToken=d4bfe873e7598c49, processorArchitecture=MSIL">
       <HintPath>packages\ICSharpCode.Decompiler.8.2.0.7535\lib\netstandard2.0\ICSharpCode.Decompiler.dll</HintPath>

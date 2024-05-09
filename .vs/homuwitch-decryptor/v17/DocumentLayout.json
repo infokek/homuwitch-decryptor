@@ -1,14 +1,26 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\User\\Temp\\homuwitch-decryptor\\",
+  "WorkspaceRootPath": "C:\\Users\\user\\Temp\\homuwitch-decryptor\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{A31ADCC1-7995-46C6-8C03-31C989F67CA0}|homuwitch-decryptor.csproj|c:\\users\\user\\temp\\homuwitch-decryptor\\main.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{A31ADCC1-7995-46C6-8C03-31C989F67CA0}|homuwitch-decryptor.csproj|c:\\users\\user\\temp\\homuwitch-decryptor\\main.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A31ADCC1-7995-46C6-8C03-31C989F67CA0}|homuwitch-decryptor.csproj|solutionrelative:main.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A31ADCC1-7995-46C6-8C03-31C989F67CA0}|homuwitch-decryptor.csproj|C:\\Users\\user\\Temp\\homuwitch-decryptor\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A31ADCC1-7995-46C6-8C03-31C989F67CA0}|homuwitch-decryptor.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A31ADCC1-7995-46C6-8C03-31C989F67CA0}|homuwitch-decryptor.csproj|C:\\Users\\user\\Temp\\homuwitch-decryptor\\main.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{A31ADCC1-7995-46C6-8C03-31C989F67CA0}|homuwitch-decryptor.csproj|solutionrelative:main.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A31ADCC1-7995-46C6-8C03-31C989F67CA0}|homuwitch-decryptor.csproj|C:\\Users\\User\\Temp\\homuwitch-decryptor\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A31ADCC1-7995-46C6-8C03-31C989F67CA0}|homuwitch-decryptor.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A31ADCC1-7995-46C6-8C03-31C989F67CA0}|homuwitch-decryptor.csproj|C:\\Users\\user\\Temp\\homuwitch-decryptor\\main.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A31ADCC1-7995-46C6-8C03-31C989F67CA0}|homuwitch-decryptor.csproj|solutionrelative:main.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A31ADCC1-7995-46C6-8C03-31C989F67CA0}|homuwitch-decryptor.csproj|C:\\Users\\user\\Temp\\homuwitch-decryptor\\main.resx||{FF4D6ACA-9352-4A5F-821E-F4D6EBDCAB11}",
+      "RelativeMoniker": "D:0:0:{A31ADCC1-7995-46C6-8C03-31C989F67CA0}|homuwitch-decryptor.csproj|solutionrelative:main.resx||{FF4D6ACA-9352-4A5F-821E-F4D6EBDCAB11}"
     }
   ],
   "DocumentGroupContainers": [
@@ -23,27 +35,61 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "Main.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\User\\Temp\\homuwitch-decryptor\\Main.cs",
+              "Title": "Main.cs",
+              "DocumentMoniker": "C:\\Users\\user\\Temp\\homuwitch-decryptor\\Main.cs",
               "RelativeDocumentMoniker": "Main.cs",
-              "ToolTip": "C:\\Users\\User\\Temp\\homuwitch-decryptor\\Main.cs [Design]",
+              "ToolTip": "C:\\Users\\user\\Temp\\homuwitch-decryptor\\Main.cs",
+              "RelativeToolTip": "Main.cs",
+              "ViewState": "AQIAAHAAAAAAAAAAAAAcwMUAAAAdAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-07T13:36:44.298Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Main.Designer.cs",
+              "DocumentMoniker": "C:\\Users\\user\\Temp\\homuwitch-decryptor\\Main.Designer.cs",
+              "RelativeDocumentMoniker": "Main.Designer.cs",
+              "ToolTip": "C:\\Users\\user\\Temp\\homuwitch-decryptor\\Main.Designer.cs",
+              "RelativeToolTip": "Main.Designer.cs",
+              "ViewState": "AQIAAGAAAAAAAAAAAAAowLUAAAAgAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-26T21:39:04.806Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Main.resx",
+              "DocumentMoniker": "C:\\Users\\user\\Temp\\homuwitch-decryptor\\Main.resx",
+              "RelativeDocumentMoniker": "Main.resx",
+              "ToolTip": "C:\\Users\\user\\Temp\\homuwitch-decryptor\\Main.resx",
+              "RelativeToolTip": "Main.resx",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001005|",
+              "WhenOpened": "2024-04-26T21:39:07.76Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Main.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\user\\Temp\\homuwitch-decryptor\\Main.cs",
+              "RelativeDocumentMoniker": "Main.cs",
+              "ToolTip": "C:\\Users\\user\\Temp\\homuwitch-decryptor\\Main.cs [Design]",
               "RelativeToolTip": "Main.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-11T12:21:35.746Z",
-              "EditorCaption": " [Design]"
+              "WhenOpened": "2024-04-11T12:21:35.746Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
               "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\User\\Temp\\homuwitch-decryptor\\Program.cs",
+              "DocumentMoniker": "C:\\Users\\user\\Temp\\homuwitch-decryptor\\Program.cs",
               "RelativeDocumentMoniker": "Program.cs",
-              "ToolTip": "C:\\Users\\User\\Temp\\homuwitch-decryptor\\Program.cs",
+              "ToolTip": "C:\\Users\\user\\Temp\\homuwitch-decryptor\\Program.cs",
               "RelativeToolTip": "Program.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAF4AAAATAAAA",
+              "ViewState": "AQIAAHcAAAAAAAAAAAAwwIMAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-05T22:21:36.868Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-04-05T22:21:36.868Z"
             }
           ]
         }
