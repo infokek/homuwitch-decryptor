@@ -3,12 +3,11 @@
 This is decryption tool for **HomuWitch Ransomware**.
 You can easily decrypt files that were encrypted by **HomuWitch Ransomware** using this tool.
 
-[![Linkedin](https://raw.githubusercontent.com/tandpfun/skill-icons/main/icons/LinkedIn.svg =100x20) LinkedIn](https://www.linkedin.com/infokek)
+[<img src="https://raw.githubusercontent.com/tandpfun/skill-icons/main/icons/LinkedIn.svg" width="200" height="200">](https://www.linkedin.com/infokek)
 &nbsp;
-[![GitHub](https://raw.githubusercontent.com/tandpfun/skill-icons/main/icons/Github-Dark.svg) GitHub](https://github.com/infokek)
+[<img src="https://raw.githubusercontent.com/tandpfun/skill-icons/main/icons/Github-Dark.svg" width="200" height="200">](https://github.com/infokek)
 &nbsp;
-[![Twitter](https://raw.githubusercontent.com/tandpfun/skill-icons/main/icons/Twitter.svg) Twitter](https://x.com/infokek_)
-
+[<img src="https://raw.githubusercontent.com/tandpfun/skill-icons/main/icons/Twitter.svg" width="200" height="200">](https://x.com/infokek_)
 
 [![C#](https://user-images.githubusercontent.com/25181517/121405384-444d7300-c95d-11eb-959f-913020d3bf90.png) C#]()
 &nbsp;
