@@ -3,17 +3,17 @@
 This is decryption tool for **HomuWitch Ransomware**.
 You can easily decrypt files that were encrypted by **HomuWitch Ransomware** using this tool.
 
-[<img src="https://user-images.githubusercontent.com/25181517/121405384-444d7300-c95d-11eb-959f-913020d3bf90.png" width="50" height="50">]()
+[<img src="https://user-images.githubusercontent.com/25181517/121405384-444d7300-c95d-11eb-959f-913020d3bf90.png" width="30" height="30">]()
 &nbsp;
-[<img src="https://user-images.githubusercontent.com/25181517/121405754-b4f48f80-c95d-11eb-8893-fc325bde617f.png" width="50" height="50">]()
+[<img src="https://user-images.githubusercontent.com/25181517/121405754-b4f48f80-c95d-11eb-8893-fc325bde617f.png" width="30" height="30">]()
 &nbsp;
-[<img src="https://raw.githubusercontent.com/tandpfun/skill-icons/main/icons/VisualStudio-Dark.svg" width="50" height="50">]()
+[<img src="https://raw.githubusercontent.com/tandpfun/skill-icons/main/icons/VisualStudio-Dark.svg" width="30" height="30">](https://visualstudio.microsoft.com/vs/community/)
 &nbsp;
-[<img src="https://raw.githubusercontent.com/tandpfun/skill-icons/main/icons/LinkedIn.svg" width="50" height="50">](https://www.linkedin.com/infokek)
+[<img src="https://raw.githubusercontent.com/tandpfun/skill-icons/main/icons/LinkedIn.svg" width="30" height="30">](https://www.linkedin.com/infokek)
 &nbsp;
-[<img src="https://raw.githubusercontent.com/tandpfun/skill-icons/main/icons/Github-Dark.svg" width="50" height="50">](https://github.com/infokek)
+[<img src="https://raw.githubusercontent.com/tandpfun/skill-icons/main/icons/Github-Dark.svg" width="30" height="30">](https://github.com/infokek)
 &nbsp;
-[<img src="https://raw.githubusercontent.com/tandpfun/skill-icons/main/icons/Twitter.svg" width="50" height="50">](https://x.com/infokek_)
+[<img src="https://raw.githubusercontent.com/tandpfun/skill-icons/main/icons/Twitter.svg" width="30" height="30">](https://x.com/infokek_)
 
 ## How to use?
 Download latest realease from [Releases](https://github.com/infokek/homuwitch-decryptor/releases), Auto or Pick -> Decrypt.
