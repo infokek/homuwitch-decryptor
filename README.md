@@ -3,17 +3,17 @@
 This is decryption tool for **HomuWitch Ransomware**.
 You can easily decrypt files that were encrypted by **HomuWitch Ransomware** using this tool.
 
-[<img src="https://raw.githubusercontent.com/tandpfun/skill-icons/main/icons/LinkedIn.svg" width="200" height="200">](https://www.linkedin.com/infokek)
+[<img src="https://raw.githubusercontent.com/tandpfun/skill-icons/main/icons/LinkedIn.svg" width="50" height="50">](https://www.linkedin.com/infokek)
 &nbsp;
-[<img src="https://raw.githubusercontent.com/tandpfun/skill-icons/main/icons/Github-Dark.svg" width="200" height="200">](https://github.com/infokek)
+[<img src="https://raw.githubusercontent.com/tandpfun/skill-icons/main/icons/Github-Dark.svg" width="50" height="50">](https://github.com/infokek)
 &nbsp;
-[<img src="https://raw.githubusercontent.com/tandpfun/skill-icons/main/icons/Twitter.svg" width="200" height="200">](https://x.com/infokek_)
+[<img src="https://raw.githubusercontent.com/tandpfun/skill-icons/main/icons/Twitter.svg" width="50" height="50">](https://x.com/infokek_)
 
-[![C#](https://user-images.githubusercontent.com/25181517/121405384-444d7300-c95d-11eb-959f-913020d3bf90.png) C#]()
+[<img src="https://user-images.githubusercontent.com/25181517/121405384-444d7300-c95d-11eb-959f-913020d3bf90.png" width="50" height="50">]()
 &nbsp;
-[![.NET Core](https://user-images.githubusercontent.com/25181517/121405754-b4f48f80-c95d-11eb-8893-fc325bde617f.png) .NET Core]()
+[<img src="https://user-images.githubusercontent.com/25181517/121405754-b4f48f80-c95d-11eb-8893-fc325bde617f.png" width="50" height="50">]()
 &nbsp;
-[![Visual Studio](https://raw.githubusercontent.com/tandpfun/skill-icons/main/icons/VisualStudio-Dark.svg) Visual Studio]()
+[<img src="https://raw.githubusercontent.com/tandpfun/skill-icons/main/icons/VisualStudio-Dark.svg" width="50" height="50">]()
 
 ## How to use?
 Download latest realease from [Releases](https://github.com/infokek/homuwitch-decryptor/releases), Auto or Pick -> Decrypt.
