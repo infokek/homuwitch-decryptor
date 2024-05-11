@@ -22,7 +22,5 @@ jobs:
         dotnet-version: 5.0.x
     - name: Add msbuild to PATH
       uses: microsoft/setup-msbuild@v2
-      with:
-        vs-version: '[17.0]'
     - name: Build
       run: msbuild YourSolution.sln /p:Configuration=Release /p:Platform=x64
