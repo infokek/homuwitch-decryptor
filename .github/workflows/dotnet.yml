@@ -12,17 +12,24 @@ on:
 jobs:
   build:
 
-    runs-on: ubuntu-latest
+    runs-on: windows-2019
 
     steps:
     - uses: actions/checkout@v4
     - name: Setup .NET
       uses: actions/setup-dotnet@v4
       with:
-        dotnet-version: 8.0.x
-    - name: Restore dependencies
-      run: dotnet restore
+        dotnet-version: 5.0.x
+    - name: Add msbuild to PATH
+      uses: microsoft/setup-msbuild@v2
     - name: Build
-      run: dotnet build --no-restore
-    - name: Test
-      run: dotnet test --no-build --verbosity normal
+      run: msbuild homuwitch-decryptor.sln /p:Configuration=Release
+    - name: Archive production artifacts
+      uses: actions/upload-artifact@v4
+      with:
+        name: homuwitch-decryptor-release
+        path: |
+           bin/Release/*
+           !bin/Release/*.xml
+           !bin/Release/*.pdb
+           !bin/Release/*.config
