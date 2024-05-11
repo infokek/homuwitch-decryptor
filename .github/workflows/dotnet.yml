@@ -27,7 +27,7 @@ jobs:
     - name: Archive production artifacts
       uses: actions/upload-artifact@v4
       with:
-        name: homuwitch-decryptor release
+        name: homuwitch-decryptor-release
         path: |
            bin/Release/*
            !bin/Release/*.xml
