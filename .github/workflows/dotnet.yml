@@ -23,4 +23,4 @@ jobs:
     - name: Add msbuild to PATH
       uses: microsoft/setup-msbuild@v2
     - name: Build
-      run: msbuild YourSolution.sln /p:Configuration=Release /p:Platform=x64
+      run: msbuild homuwitch-decryptor.sln /p:Configuration=Release /p:Platform=x64
